@@ -1,0 +1,115 @@
+react
+react is js library used to build single page application
+
+react features
+1) virtual dom-it is a copy of real dom (dom-document opject model)
+- it will comapre and render the changes only.
+- using diffing algorithm and the entire process is caled reconcialation.
+2) component architecture -navbar, footer,card,sidebar.jsx
+3) single page application(SPA) - it contains only one index.htmlhtml is called as XMl and js  is javascript so we call it as jsx
+jsx-- javascript and html code anta okadaggare use chestam 
+
+component
+it is the piece of code which renders part of UI
+1) functional component---Hooks-built in functions
+
+1st component:
+function Navbar(){
+    return (<h1>navbar</h1)
+}
+export default Navbar
+
+2nd component:
+import Navbar from '/Navbar'
+
+
+//fr- fraction ratio used for giving everything in same size
+ 
+2) class component ---old but see the theory and interview question for interview purpose.
+      ---life cycle methods.
+
+props--properties
+-----------------
+--It is a object that is used to pass the information from parent to child
+--react  will not rerender when the variable changes
+--react re renders only when state changes 
+
+State 
+====
+--It is like a variable it is used to handle the dynamic nature of 
+a component or store the data
+
+Hooks
+====
+--hooks are built in functions that is used to handle react features
+-- all hooks need to be imported.
+
+types
+1.useState
+2.useEffect
+
+1.useState
+=======
+--It is a hook that is used to manage the state
+it is used to store data dynamically.
+
+import{useState} from 'react'
+
+
+let [count,setCount]=useState(0); //used to store data in a component
+{count}
+<button onclick={()=>setCount(count+1)}>inc</button>
+
+theory of state---> it is like a variable name
+ setState- it is a function that is used to change the value of a state
+
+ setState(2)
+ useState(initial value)
+
+ 2. useEffect()
+it is a hook that is used to manage side effects such as 
+API calling,localstorage,settimeout,setinterval etc...
+ it has 3 types
+
+import{useEffect} from 'react';
+
+1st type - useEffect with no dependency
+it will run everytime when the state changes
+so it has low efficiency 
+so we will not use this
+and api always asks for premium after  some limit or trails
+useEffect(()=>{
+      //api logic
+      console.log('apicalling)
+})
+
+2nd type -useEffect with empty dependence
+it will run only one time
+it will run again when the page is refreshed
+useEffect(()=>{
+      console.log('apicalling')
+},[])
+
+3rd type -useEffect with dependency
+it will run one time at first and re runs only when the dependencies changes
+
+useEffect(()=>{
+      console.log('apicalling')
+},[state1,state2,state3])
+
+each hook is an interview question in react
+interview ans
+used to run sideeffects such as api calling and local storage 
+it has 3 types 
+1st - runs every time
+2nd - runs only once and when it is refereshes the page
+3rd -runs  once and runs when the revelent data is changed (http  services like update,delete)
+    it is best and advance  to use
+
+
+    list rendering
+    using map we can dynamical cards
+
+    key
+    it is unique id that will be applied for every card
+    
