@@ -113,3 +113,59 @@ it has 3 types
     key
     it is unique id that will be applied for every card
     
+form - card
+filter -search and category
+deployment
+
+routing - to go from one place to another
+html-routing-anchor tag
+
+anchor tag will not  work in react
+to use in react we need use a library
+react router dom -->it is a library in react used for static and dynamic routing
+
+it will not be present so we need to install from external source
+steps:
+1) install
+npm install react-router-dom
+
+2) configure reacgt router -- main.jsx
+import {BrowserRouter} from 'react-router-dom'
+
+<BrowserRouter>
+<App/>
+</BrowserRouter>
+
+we need to add these lines in main .jsx
+
+3) rules - routes -- App.jsx
+
+<Routes>
+<Route path='/' element={</Home}/>
+<Route path='/about' element={</About}/>
+<Route path='/addnewdoctor' element={</Addnewdoctor}/>
+</Routes>
+
+4) components - navbar
+useNavigate()-it is used for programatical routing
+
+import {useNavigate} from 'react-router-dom'
+let navigate=useNavigate()
+<button onClick={()=>navigate('/')}>home</button>
+<button onClick={()=>navigate('/about')}>About</button>
+
+
+5)dynamic routing---App.jsx
+<Route path='/doctordetails/:id' element={</Doctordetails>}/>
+
+6)doctor cards --doctorcard
+import {useNavigate} from 'react-router-dom'
+let navigate=useNavigate()
+
+<button onClick={()=>navigate(`/doctordetails/${id}`)}>view details</button>
+
+7)useParams()---doctordetails
+it is used to get the data from the url
+
+import {useParams} from 'react-router-dom'
+let {id}=useParams()

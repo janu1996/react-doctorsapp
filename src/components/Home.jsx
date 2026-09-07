@@ -21,7 +21,7 @@ imglink:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS46nAKOuOI0dZkgct
 id: 2, 
 name: "Sam", 
 age: 26, 
-gender: "Male", 
+gender: "Female", 
 specialization: "Bones", 
 salary: 4000000,
 imglink:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg98-52xcgPqmTNcm4ZFKlkHOKODgkofbiXkyxF71cDA&s=10'
@@ -72,7 +72,9 @@ setDoctors(data)
                 specialization={doctor.specialization}
                 gender={doctor.gender}
                 imglink={doctor.imglink}
-                key={doctor.id}/>
+                key={doctor.id}
+                 id={doctor.id}
+                 />
             })}
                
             </div>):(<h1>loading</h1>)}
